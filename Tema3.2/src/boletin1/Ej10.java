@@ -22,10 +22,10 @@ public class Ej10 {
 		System.out.println("Escribe una frase");
 		frase1 = scanner.nextLine();
 
-		frase = frase1.toCharArray();
+		frase = frase1.toLowerCase().toCharArray(); // Convertir a minúsculas
 
 		for (int i = 0; i < frase.length; i++) {
-			if (Arrays.binarySearch(conjunto1, frase[i]) >= 0) {
+			if (Arrays.binarySearch(conjuntoOrdenado, frase[i]) >= 0) {
 				frase[i] = codifica(conjunto1, conjunto2, frase[i]);
 			}
 		}
@@ -39,8 +39,14 @@ public class Ej10 {
 	}
 
 	public static char codifica(char conjunto1[], char conjunto2[], char c) {
-
+		// Buscar la posición del carácter en conjunto1
+		for (int i = 0; i < conjunto1.length; i++) {
+			if (conjunto1[i] == c) {
+				// Devolver el carácter correspondiente en conjunto2
+				return conjunto2[i];
+			}
+		}
+		// Si no se encuentra, devolver el carácter original
 		return c;
 	}
-
 }
