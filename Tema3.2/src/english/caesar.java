@@ -4,7 +4,7 @@ public class caesar {
 
 	public static void main(String[] args) {
 		String input = "abczABCZ0189";
-		int shift = -2; // Puedes probar con valores positivos o negativos aquí
+		int shift = -7; // Puedes probar con valores positivos o negativos aquí
 		String output = caesarCipher(input, shift);
 		System.out.println("Entrada: " + input);
 		System.out.println("Salida: " + output);
